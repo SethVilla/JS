@@ -30,7 +30,7 @@ const km = 16.0934;
 const getGeoLocation = () => {
   let test2 = "san diego california";
   const test = fetch(
-    `https://maps.googleapis.com/maps/api/geocode/json?address=${test2}&key=AIzaSyDV56ym70rVUXPVo1qKULggF7vSJeTWMR0`
+    `https://maps.googleapis.com/maps/api/geocode/json?address=${test2}&key=`
   )
     .then((data) => data.json())
     .then((data) => console.log(data));
