@@ -1,3 +1,4 @@
+
 const carMakers = ['tesla', 'jeep', 'toyota'];
 const dates = [new Date(), new Date()];
 
@@ -9,6 +10,8 @@ const carsByMake: string[][] = [];
 // Help with inference when extracting values
 
 const car = carMakers[0];
+const test = 3
+console.log(typeof(typeof null))
 
 const myCar = carMakers.pop();
 

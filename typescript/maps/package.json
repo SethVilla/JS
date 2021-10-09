@@ -4,6 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@types/faker": "^5.5.8",
+    "@types/googlemaps": "^3.43.3",
+    "@types/node": "^16.10.2",
+    "faker": "^5.5.3",
     "parcel-bundler": "^1.12.5"
   },
   "devDependencies": {

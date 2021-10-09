@@ -10,7 +10,7 @@ class Vehicle {
   }
 }
 
-class Car extends Vehicle {
+class Carro extends Vehicle {
 
   constructor(public wheels: number, color : string){
     super(color)
@@ -29,4 +29,4 @@ class Car extends Vehicle {
 
 const vehicle = new Vehicle('orange');
 
-const coolCar = new Car(4, 'red')
+const coolCar = new Carro(4, 'red')
