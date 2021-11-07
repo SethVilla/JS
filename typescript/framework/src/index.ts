@@ -1,29 +1,30 @@
-import { User } from "./models/Users";
+import {Userlist} from './views/UserList'
+import { Collection } from './models/Collection'
+import {User, UserProps} from './models/Users'
 
-const user = new User({id: 1, name: 'Seth Villa', age: 30});
+const url = 'http://localhost:3000/users'
 
-user.get('name')
+const users = new Collection(url, (json: UserProps) =>  User.buildUser(json))
 
-user.on('save', () => {
-  console.log(user)
+users.on('change', () => {
+  const root = document.getElementById('root');
+  if (root){
+    new Userlist(root, users).render()
+  }
 })
 
-user.save();
+users.fetch()
 
-// user.on('change', () => { console.log('change 1'))
-// user.on('change', () => { console.log('change 2')})
-// user.on('save', () => { console.log('save was triggered')})
-// user.trigger('hey')
+// import { UserEdit } from "./views/UserEdit";
+// import { User } from "./models/Users";
+// const user = User.buildUser({name: 'Uxbal', age: 8})
+//  const root = document.getElementById('root');
 
-// const colors = {
-//   color: 'red',
-//   printColor() {
-//    console.log(this.color)
-
-//    // console.log(colors.color)
-//   }
+//  if (root) {
+//   const userEdit = new UserEdit(root, user)
+//   userEdit.render()
+//   console.log(userEdit)
+//  } else {
+//    throw 'No root div'
 //  }
-//  colors.printColor();
-//  // destructuring printColor error
-//  const printColor = colors.printColor
-//  printColor();
+
